@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DotNetCoreSqlDb.Data;
+﻿using DotNetCoreSqlDb.Data;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add database context and cache
-if(builder.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<MyDatabaseContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection")));
